@@ -1,0 +1,194 @@
+﻿.container1{
+    position: relative;
+    margin-bottom: 40vw;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.subcontainer1 {
+    position: relative;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 13vw;
+    margin-left: 5vw;
+    z-index: 10;
+}
+
+.subcontainer1 > img:first-child {
+    width: 30vw;
+    height: auto;
+    filter: drop-shadow(1px 1px 2px rgba(0,0,0,0.7));
+}
+
+.subcontainer1 p {
+    font-family: "Open-Sans-Italic";
+    font-size: 2vw;
+    color: white;
+    text-shadow: 1px 1px 2px black;
+    text-align: center;
+    position: relative;
+    top: -1vw;
+}
+
+.container1 > img:first-child {
+    width: 100%;
+    height: auto;
+    position: absolute;
+    z-index: 0;
+    top: -5.5vw;
+}
+
+.container2{
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3vw;
+    gap: 2vw;
+    margin-left: 3vw;
+}
+
+.subcontainer2 {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 50vw;
+    padding: 3vw;
+}
+
+.container2 > img:first-child {
+    width: 32vw;
+    height: auto;
+}
+
+.subcontainer2 > p:first-child {
+    font-family: "One-Little-Font";
+    font-size: 3vw;
+    font-weight: 600;
+    color: #B9375D;
+}
+
+.subcontainer2 > p:nth-child(2) {
+    font-family: "Open-Sans-Regular";
+    font-size: 1.7vw;
+    color: black;
+    line-height: 3vw;
+}
+
+.container3 {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 5vw 3vw;
+    background-color: #D25D5D;
+}
+
+.container3 > p:first-child {
+    font-family: "One-Little-Font";
+    font-size: 3vw;
+    color: white;
+    margin-bottom: 3vw;
+    text-align: center;
+}
+
+.container3 > ul{
+    display: flex;    
+}
+
+.container3 > ul:nth-child(2){
+    font-family: "Open-Sans-Bold";
+    font-size: 2vw;
+    color: white;
+    list-style: none;
+    gap: 16vw;
+    padding-left: 0;
+}
+
+.container3 > ul:nth-child(3){
+    font-family: "Open-Sans-Regular";
+    font-size: 1.3vw;
+    color: white;
+    list-style: none;
+    gap: 5vw;
+    padding-left: 0;
+}
+
+.container3 > ul:nth-child(3) li{
+    width: 12vw;
+    text-align: center;
+    line-height: 2.5vw;
+}
+
+.container3 > ul:nth-child(2) li{
+    text-align: center;
+}
+
+.container4 {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    padding: 6vw;
+    gap: 5vw;
+    margin-bottom: 10vw;
+    margin-top: 10vw;
+}
+
+.subcontainer4 {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 1.5vw;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+    width: 36vw;
+}
+
+.subcontainer4 > img:first-child{
+    width: 36vw;
+    height: auto;
+    border-radius: 1.5vw 1.5vw 0 0;
+}
+
+.subsubcontainer4{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container4 > .subcontainer4:first-child {
+    position: relative;
+    top: -5vw;
+}
+
+.container4 > .subcontainer4:nth-child(2) {
+    position: relative;
+    top: 5vw;
+}
+
+.container4 > .subcontainer4:first-child .subsubcontainer4 {
+    padding: 1vw 3vw;
+}
+
+.container4 > .subcontainer4:nth-child(2) .subsubcontainer4 {
+    padding: 1vw 2.7vw;
+}
+
+.subsubcontainer4 > p:nth-child(1) {
+    font-family: "One-Little-Font";
+    font-size: 3vw;
+    font-weight: 600;
+    color: #B9375D;
+    text-align: center;
+    margin-bottom: 0;
+}
+
+.subsubcontainer4 > p:nth-child(2){
+    font-family: "Open-Sans-Regular";
+    font-size: 1.3vw;
+    color: black;
+    line-height: 2.5vw;
+    text-align: center;
+}

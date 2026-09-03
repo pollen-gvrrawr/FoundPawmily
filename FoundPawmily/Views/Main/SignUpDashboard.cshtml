@@ -1,0 +1,134 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Found Pawmily | Sign Up</title>
+    <link rel="stylesheet" href="../Content/bootstrap.min.css">
+    <link rel="stylesheet" href="../Content/main-css/mainlayout.css">
+    <link rel="stylesheet" href="../Content/main-css/signin.css">
+</head>
+<body ng-app="FoundPawmily" ng-controller="FoundPawmilyController" style="background-color: #E7D3D3; overflow-x: hidden">
+    <div class="row main-container1 d-flex align-items-center justify-content-center">
+        <div class="col-5 d-flex align-items-center justify-content-end">
+            <img src="../Content/logo-layered-pink.png" alt="Found Pawmily" style="width: 27vw; height: auto;" class="me-5" />
+        </div>
+        <div class="col-7 d-flex align-items-center justify-content-start">
+            <div class="login-container rounded-4">
+                <p class="header-signin">sign up</p>
+                <form action="" method="post" class="needs-validation" name="signUpForm" novalidate>
+                    <div class="row mb-3">
+                        <div class="col-6">
+                            <label for="fname" class="form-label ">First name <span style="color: red;">*</span></label>
+                            <input name="fname" type="text" class="form-control no-valid-feedback" id="fname" ng-pattern="/^[A-ZÑ][a-zñ]+(?:\s[A-ZÑ][a-zñ]+)*$/" ng-model="fname" ng-class="{'is-invalid': signUpForm.fname.$touched && signUpForm.fname.$invalid}" ng-required="true" maxlength="50" ng-keypress="lettersOnly($event)">
+                            <div class="invalid-feedback">
+                                Capitalize the first letter. Up to 50 characters only.
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <label for="lname" class="form-label">Last name <span style="color: red;">*</span></label>
+                            <input name="lname" type="text" class="form-control no-valid-feedback" id="lname" ng-pattern="/^[A-ZÑ][a-zñ]+(?:\s[A-ZÑ][a-zñ]+)*$/" ng-model="lname" ng-class="{'is-invalid': signUpForm.lname.$touched && signUpForm.lname.$invalid}" ng-required="true" maxlength="50" ng-keypress="lettersOnly($event)">
+                            <div class="invalid-feedback">
+                                Capitalize the first letter. Up to 50 characters only.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col">
+                            <label for="email" class="form-label">Email <span style="color: red;">*</span></label>
+                            <input name="email" type="email" class="form-control no-valid-feedback" id="email" placeholder="name@site.com" ng-model="email" ng-class="{'is-invalid': signUpForm.email.$touched && signUpForm.email.$invalid}" ng-required="true" maxlength="254">
+                            <div class="invalid-feedback">
+                                Please enter a valid email address.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col">
+                            <label for="userrole" class="form-label">User Role <span style="color: red;">*</span></label>
+                            <select name="userrole" id="userrole" class="form-select no-valid-feedback" ng-model="userrole" ng-required="true">
+                                <option selected disabled value="">Select a role</option>
+                                <option value="1">Admin</option>
+                                <option value="0">Employee</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col">
+                            <label for="password1" class="form-label">Password<span style="color: red;">*</span></label>
+                            <input name="password1" id="password1" type="password"
+                                   ng-model="pass1"
+                                   class="form-control"
+                                   ng-class="{'is-invalid': signUpForm.password1.$touched && (pass1.length < 8 || !hasUppercase(pass1) || !hasSpecialChar(pass1))}"
+                                   ng-required="true" maxlength="128" />
+                            <div class="invalid-feedback" ng-show="(signUpForm.password1.$touched || signUpForm.password1.$dirty) && (!pass1 || pass1.length < 8)">
+                                Password must be at least 8 characters long.
+                            </div>
+                            <div class="invalid-feedback" ng-show="(signUpForm.password1.$touched || signUpForm.password1.$dirty) && !hasUppercase(pass1)">
+                                Password must contain at least one uppercase letter.
+                            </div>
+                            <div class="invalid-feedback" ng-show="(signUpForm.password1.$touched || signUpForm.password1.$dirty) && !hasSpecialChar(pass1)">
+                                Password must contain at least one special character.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mb-4">
+                        <div class="col">
+                            <label for="password2" class="form-label">Confirm password<span style="color: red;">*</span></label>
+                            <input name="password2" id="password2" type="password"
+                                   ng-model="pass2"
+                                   class="form-control"
+                                   ng-required="true"
+                                   ng-class="{'is-invalid': signUpForm.password2.$touched && pass2 !== pass1}"
+                                   maxlength="128" />
+                            <div class="invalid-feedback">
+                                Does not match the password above.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <div class="col-5">
+                            <label class="form-check-label" for="imagepath1">Profile Picture</label>
+                            <input class="form-control mb-3" type="file" name="imagepath1" id="imagepath1" accept="image/*" onchange="angular.element(this).scope().previewUserImage1(event)" />
+                        </div>
+                        <div class="col d-flex justify-content-center">
+                            <img class="rounded-circle" ng-src="{{ imagePreviewUser1 }}" alt="User Profile" style="width: 8vw; height: auto;" />
+                        </div>
+                    </div>
+                    <hr class="d-block">
+                    <div class="row mb-4">
+                        <div class="col d-flex justify-content-center">
+                            <p class="reg-text">Already have an account? <span ng-click="redirectSignIn()" class="register-text">Sign in</span> here</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col d-flex justify-content-center">
+                            <button type="button" name="submit" class="btn submit-btn w-50 rounded-5" ng-click="submitSignUpForm()">submit</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="../Scripts/jquery-3.7.0.min.js"></script>
+    <script src="../Scripts/angular.min.js"></script>
+
+    <script src="~/Scripts/Chart.min.js"></script>
+    <script src="~/Scripts/angular-chart.min.js"></script>
+
+    <script src="../Scripts/Main/Module.js"></script>
+    <script src="../Scripts/Main/Service.js"></script>
+    <script src="../Scripts/Main/Controller.js"></script>
+
+    <script src="../Scripts/AgeValidator.js"></script>
+    <script src="../Scripts/PetProfileController.js"></script>
+    <script src="../Scripts/dataTables.min.js"></script>
+    <script src="../Scripts/bootstrap.bundle.min.js"></script>
+    <script src="../Scripts/sweetalert2.all.min.js"></script>
+    <script src="../Scripts/pdfmake/pdfmake.min.js"></script>
+    <script src="../Scripts/pdfmake/vfs_fonts.js"></script>
+</body>
+</html>

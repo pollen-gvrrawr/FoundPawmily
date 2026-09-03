@@ -1,0 +1,75 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Found Pawmily | Sign In</title>
+    <link rel="stylesheet" href="../Content/bootstrap.min.css">
+    <link rel="stylesheet" href="../Content/main-css/mainlayout.css">
+    <link rel="stylesheet" href="../Content/main-css/signin.css">
+</head>
+<body ng-app="FoundPawmily" ng-controller="FoundPawmilyController" style="background-color: #E7D3D3;">
+    <div class="row main-container d-flex align-items-center justify-content-center">
+        <div class="col-5 d-flex align-items-center justify-content-end">
+            <img src="../Content/logo-layered-pink.png" alt="Found Pawmily" style="width: 27vw; height: auto;" class="me-5" />
+        </div>
+        <div class="col-7 d-flex align-items-center justify-content-start">
+            <div class="login-container rounded-4">
+                <p class="header-signin">sign in</p>
+                <form action="/" method="post" class="needs-validation" name="signInForm" novalidate>
+                    <div class="row mb-3">
+                        <div class="col">
+                            <label class="form-label">Email<span style="color: red;">*</span></label>
+                            <input type="email" name="email" class="form-control" ng-model="loginemail" ng-class="{'is-invalid': signInForm.email.$touched && signInForm.email.$invalid}" ng-required="true" maxlength="254" />
+                            <div class="invalid-feedback">
+                                Please enter a valid email address.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row mb-4">
+                        <div class="col">
+                            <label class="form-label">Password<span style="color: red;">*</span></label>
+                            <input type="password" name="pass" class="form-control" ng-model="loginpass" ng-class="{'is-invalid': signInForm.pass.$touched && signInForm.pass.$invalid}" ng-required="true" maxlength="128" />
+                            <div class="invalid-feedback">
+                                Please enter your password.
+                            </div>
+                        </div>
+                    </div>
+                    <hr class="d-block">
+                    <div class="row mb-4">
+                        <div class="col d-flex justify-content-center">
+                            <p class="reg-text">No account yet? <span ng-click="redirectSignUp()" class="register-text">Sign up</span> here</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col d-flex justify-content-center">
+                            <button type="button" name="submit" class="btn submit-btn w-50 rounded-5" ng-click="loginSession()">submit</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="../Scripts/jquery-3.7.0.min.js"></script>
+    <script src="../Scripts/angular.min.js"></script>
+
+    <script src="~/Scripts/Chart.min.js"></script>
+    <script src="~/Scripts/angular-chart.min.js"></script>
+
+    <script src="../Scripts/Main/Module.js"></script>
+    <script src="../Scripts/Main/Service.js"></script>
+    <script src="../Scripts/Main/Controller.js"></script>
+
+    <script src="../Scripts/AgeValidator.js"></script>
+    <script src="../Scripts/PetProfileController.js"></script>
+    <script src="../Scripts/dataTables.min.js"></script>
+    <script src="../Scripts/bootstrap.bundle.min.js"></script>
+    <script src="../Scripts/sweetalert2.all.min.js"></script>
+    <script src="../Scripts/pdfmake/pdfmake.min.js"></script>
+    <script src="../Scripts/pdfmake/vfs_fonts.js"></script>
+</body>
+</html>

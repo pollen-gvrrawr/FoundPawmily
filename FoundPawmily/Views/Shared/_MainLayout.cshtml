@@ -1,0 +1,91 @@
+﻿<!DOCTYPE html>
+
+<html style="height: 100%">
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link rel="stylesheet" href="../Content/bootstrap.min.css">
+    <link rel="stylesheet" href="../Content/main-css/mainlayout.css">
+</head>
+<body ng-app="FoundPawmily" ng-controller="FoundPawmilyController" style="background-color: #E7D3D3;">
+    <nav id="navbar">
+        <img class="logo" src="../Content/images/logo.png" alt="Found Pawmily logo" ng-click="redirectIndex()" style="cursor: pointer" />
+        <ul class="nav-container">
+            <li ng-click="redirectIndex()">home</li>
+            <li ng-click="redirectPets('Dog')">dogs & puppies</li>
+            <li ng-click="redirectPets('Cat')">cats & kittens</li>
+            <li ng-click="redirectVolunteer()">volunteer</li>
+            <li ng-click="redirectAbout()">about us</li>
+            <li ng-click="redirectAdoptForm()">adopt form</li>
+        </ul>
+    </nav>
+    <div>
+        @RenderBody()
+    </div>
+    <footer class="d-flex align-items-center justify-self-end" id="footer">
+        <img class="footer-logo" src="../Content/images/logo-layered.png" alt="Found Pawmily logo" ng-click="redirectIndex()" style="cursor: pointer" />
+        <div class="ms-auto d-flex flex-column mb-3 me-3">
+            <div class="socials-container d-flex gap-4 align-items-center justify-content-end mb-2">
+                <img src="../Content/images/footer-facebook.png" alt="Facebook" id="facebook" />
+                <img src="../Content/images/footer-instagram.png" alt="Instagfam" id="instagram" />
+                <img style="width: 2.5vw;" src="../Content/images/footer-mail.png" alt="Email" id="mail" />
+            </div>
+            <ul class="d-flex gap-5 justify-content-end footer-directory mb-2" style="list-style: none">
+                <li ng-click="redirectIndex()">home</li>
+                <li ng-click="redirectDogs()">dogs & puppies</li>
+                <li ng-click="redirectCats()">cats & kittens</li>
+                <li ng-click="redirectVolunteer()">volunteer</li>
+                <li ng-click="redirectAbout()">about us</li>
+                <li ng-click="redirectAdoptForm()">adopt form</li>
+            </ul>
+            <p class="text-end copyright-text mb-0">© 2025 Found Pawmily. All rights reserved.</p>
+        </div>
+    </footer>
+    <script>
+        facebook = document.getElementById("facebook");
+        instagram = document.getElementById("instagram");
+        mail = document.getElementById("mail");
+
+        facebook.addEventListener("mouseenter", () => {
+            facebook.src = "../Content/images/footer-facebook-hover.png";
+        });
+
+        facebook.addEventListener("mouseleave", () => {
+            facebook.src = "../Content/images/footer-facebook.png";
+        });
+
+        instagram.addEventListener("mouseenter", () => {
+            instagram.src = "../Content/images/footer-instagram-hover.png";
+        });
+
+        instagram.addEventListener("mouseleave", () => {
+            instagram.src = "../Content/images/footer-instagram.png";
+        });
+
+        mail.addEventListener("mouseenter", () => {
+            mail.src = "../Content/images/footer-mail-hover.png";
+        });
+
+        mail.addEventListener("mouseleave", () => {
+            mail.src = "../Content/images/footer-mail.png";
+        });
+    </script>
+    <script src="../Scripts/jquery-3.7.0.min.js"></script>
+    <script src="../Scripts/angular.min.js"></script>
+
+    <script src="~/Scripts/Chart.min.js"></script>
+    <script src="~/Scripts/angular-chart.min.js"></script>
+
+    <script src="../Scripts/Main/Module.js"></script>
+    <script src="../Scripts/Main/Service.js"></script>
+    <script src="../Scripts/Main/Controller.js"></script>
+
+    <script src="../Scripts/AgeValidator.js"></script>
+    <script src="../Scripts/PetProfileController.js"></script>
+    <script src="../Scripts/dataTables.min.js"></script>
+    <script src="../Scripts/bootstrap.bundle.min.js"></script>
+    <script src="../Scripts/sweetalert2.all.min.js"></script>
+    <script src="../Scripts/pdfmake/pdfmake.min.js"></script>
+    <script src="../Scripts/pdfmake/vfs_fonts.js"></script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+﻿@{
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+    <link rel="stylesheet" href="../Content/main-css/about.css">
+    <div class="container1">
+        <img src="../Content/images/about-banner.png" alt="Dog and Cat in a sunset background" />
+        <div class="subcontainer1">
+            <img src="../Content/images/logo.png" alt="Found Pawmily logo" />
+            <p>Where every paw finds their family.</p>
+        </div>
+    </div>
+    <div class="container2">
+        <img src="../Content/images/about-container2-image.png" alt="A selfie of three women" />
+        <div class="subcontainer2">
+            <p>how it all started</p>
+            <p>Found Pawmily was born from the experience of a group of friends who once volunteered at an animal shelter. While caring for rescued dogs and cats, they realized that many shelters struggle to gain recognition and connect with people who want to help. They thought—what if there was a platform where anyone could easily reach out, adopt, or volunteer? That simple idea grew into Found Pawmily: an organization dedicated to bridging shelters with kindhearted people who can give love, time, and homes to animals in need.</p>
+        </div>
+    </div>
+    <div class="container3">
+        <p>our aim</p>
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+        </ul>
+        <ul>
+            <li>To increase awareness and recognition for animal shelters across the Philippines.</li>
+            <li>To make it easier for people to adopt by connecting them with shelters and rescued pets.</li>
+            <li>To encourage volunteerism by matching willing hands with shelters in need of support.</li>
+            <li>To build a compassionate community that values adoption over buying pets.</li>
+            <li>To strengthen the network between shelters, adopters, and volunteers for greater impact.</li>
+        </ul>
+    </div>
+    <div class="container4">
+        <div class="subcontainer4">
+            <img src="../Content/images/about-vision.png" alt="Group of stray dogs" />
+            <div class="subsubcontainer4">
+                <p>vision</p>
+                <p>We envision a future where shelters thrive with support, no rescue is overlooked, and adoption becomes the first choice for families. A community united by compassion, working together to make sure every dog and cat has the chance to be loved, cared for, and truly home.</p>
+            </div>
+        </div>
+        <div class="subcontainer4">
+            <img src="../Content/images/about-mission.png" alt="Group of stray cats" />
+            <div class="subsubcontainer4">
+                <p>mission</p>
+                <p>Our mission is to be the link that connects kindhearted individuals with shelters and rescued animals. By serving as a platform, we help boost adoption, encourage volunteer efforts, and give shelters the recognition they deserve—ensuring that every dog and cat has a greater chance to find a loving home.</p>
+            </div>
+        </div>
+    </div>
+    <script>
+        const navbar = document.getElementById("navbar");
+
+        window.addEventListener("scroll", () => {
+            if (window.scrollY > 850) {
+                navbar.style.backgroundColor = "rgb(210, 93, 93)";
+                navbar.style.boxShadow = "0px 3px 5px rgba(0, 0, 0, 0.2)";
+            } else {
+                navbar.style.backgroundColor = "transparent";
+                navbar.style.boxShadow = "none";
+            }
+        });
+    </script>

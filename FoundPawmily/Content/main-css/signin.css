@@ -1,0 +1,86 @@
+﻿@font-face {
+    font-family: "Open-Sans-Bold";
+    src: url(/Content/fonts/OpenSans-Bold.ttf);
+}
+
+@font-face {
+    font-family: "Open-Sans-Regular";
+    src: url(/Content/fonts/OpenSans-Regular.ttf);
+}
+
+@font-face {
+    font-family: "Open-Sans-Italic";
+    src: url(/Content/fonts/OpenSans-Italic.ttf);
+}
+
+@font-face {
+    font-family: "One-Little-Font";
+    src: url(/Content/fonts/OneLittleFont-Regular.otf);
+}
+
+label, input {
+    font-family: "Open-Sans-Regular";
+}
+
+.main-container {
+    width: 100vw;
+    height: 100vh;
+}
+
+.main-container1 {
+    width: 100vw;
+    padding: 10vh 0;
+}
+
+.login-container {
+    width: 45vw;
+    padding: 3vw 3vw;
+    background-color: white;
+    box-shadow: rgba(0,0,0,0.2) 3px 3px 5px;
+}
+
+.header-signin {
+    font-family: "Open-Sans-Regular";
+    font-size: 2.5rem;
+    font-weight: 600;
+    color: #B9375D;
+    text-align: center;
+}
+
+.submit-btn {
+    background-color: #D25D5D;
+    color: white;
+}
+
+.submit-btn:hover {
+    background-color: #b34848;
+    color: white;
+    transition: background-color 0.2s ease-in;
+}
+
+input:focus, select:focus, .form-control.is-valid:focus,
+.was-validated .form-control:valid:focus {
+    border: dotted 3px #B9375D !important;
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+.reg-text {
+    font-family: "Open-Sans-Regular";
+    color: #7e7e7e;
+    text-align: center;
+    margin-bottom: 0;
+}
+
+.register-text {
+    font-family: "Open-Sans-Regular";
+    color: #D25D5D;
+    text-align: center;
+    margin-bottom: 0;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.register-text:hover {
+    color: #b34848;
+}

@@ -1,0 +1,34 @@
+﻿@{
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+<link rel="stylesheet" href="../Content/main-css/profile.css">
+<div class="container1" ng-init="getPetProfile()">
+    <div class="profile-container col-5 overflow-hidden" style="background-image: url('{{petProfileData.imagePath}}')"></div>
+    <div class="col-7 details-container d-flex flex-column">
+        <div class="d-flex gap-3 align-items-center justify-content-end" style="position: relative; left: 3vw;">
+            <img src="../Content/icons/left-arrow.png" alt="Left arrow" style="width: 2.5vw; height: auto; cursor: pointer;" />
+            <p class="mb-0" ng-click="goBack()">back</p>
+        </div>
+        <p class="mb-0">{{petProfileData.name}}</p>
+        <ul class="basic-info mb-3">
+            <li>Age: {{petProfileData.age}} years old</li>
+            <li>Gender: {{petProfileData.gender}}</li>
+            <li>Breed: {{petProfileData.breed}}</li>
+            <li>Size: {{petProfileData.size}}</li>
+            <li>Location: {{petProfileData.location}}</li>
+        </ul>
+        <p class="mb-0">About Me:</p>
+        <p>{{petProfileData.shortDesc}}</p>
+        <p class="mb-0">Health:</p>
+        <ul class="health">
+            <li ng-show="petProfileData.isVaccinated == 1">Vaccinated</li>
+            <li ng-show="petProfileData.isDewormed == 1">Dewormed</li>
+            <li ng-show="petProfileData.isSpayedNeutered == 1 && petProfileData.gender == 'Female'">Spayed</li>
+            <li ng-show="petProfileData.isSpayedNeutered == 1 && petProfileData.gender == 'Male'">Neutered</li>
+        </ul>
+        <button class="adopt-btn" ng-click="redirectAdoptFormId(petProfileData.petID)">adopt {{petProfileData.name}}</button>
+    </div>
+</div>
+
+
+

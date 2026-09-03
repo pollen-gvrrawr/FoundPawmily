@@ -1,0 +1,105 @@
+﻿#navbar {
+    background-color: rgb(210, 93, 93);
+}
+
+.container1{
+    margin: 3vw;
+    background-color: white;
+    border-radius: 2.5vw;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+    display: flex;
+    flex-direction: row;
+}
+
+.profile-container {
+    background-size: cover;
+    background-position: center;
+    border-radius: 2.5vw 0 0 2.5vw;
+}
+
+.details-container{
+    padding: 2vw 5vw;
+}
+
+.details-container > div:first-child > p:nth-child(2){
+    font-family: "Open-Sans-Regular";
+    font-size: 1.3vw;
+    color: black;
+    position: relative;
+    right: 1vw;
+    cursor: pointer;
+}
+
+.details-container > p:nth-child(2){
+    font-family: "Open-Sans-Bold";
+    font-size: 2.3vw;
+    color: black;
+}
+
+.basic-info {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-family: "Open-Sans-Regular";
+    font-size: 1.3vw;
+    color: black;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.basic-info li:nth-child(-n+3) {
+    grid-column: 1;
+}
+
+.basic-info li:nth-child(4) {
+    grid-column: 2;
+    grid-row: 1
+}
+
+.basic-info li:nth-child(5) {
+    grid-column: 2;
+    grid-row: 2
+}
+
+.details-container > p:nth-child(n+4), .health {
+    font-family: "Open-Sans-Regular";
+    font-size: 1.3vw;
+    color: black;
+}
+
+.adopt-btn {
+    align-self: end;
+    width: 15vw;
+    font-family: "One-Little-Font";
+    font-size: 1.5vw;
+    color: white;
+    background-color: #D25D5D;
+    border-radius: 10vw;
+    border: none;
+    padding: 0.7vw;
+    position: relative;
+    left: 3vw;
+    transition: background-color 0.2s ease-in;
+}
+
+.adopt-btn:hover{
+    background-color: #b34848;
+    transition: background-color 0.2s ease-in;
+}
+
+ul.health{
+    list-style: none;
+    padding-left: 0;
+}
+
+ul.health li::before{
+    display: inline-block;
+    content: "";
+    background-image: url(/Content/icons/check-green.png);
+    width: 1.5vw;
+    height: 1.5vw;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-right: 0.5vw;
+}

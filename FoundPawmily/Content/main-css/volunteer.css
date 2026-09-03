@@ -1,0 +1,253 @@
+﻿.container1 {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container1 > p {
+    font-family: "Open-Sans-Regular";
+    font-size: 1.7vw;
+    color: white;
+    text-shadow: 1px 1px 2px black;
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    width: 58vw;
+    margin-top: 23vw;
+}
+
+.sign-up-btn {
+    font-size: 1.5vw;
+    background-color: #D25D5D;
+    border: solid white 3px;
+    color: white;
+    font-family: "One-Little-Font";
+    border-radius: 5vw;
+    width: 15vw;
+    padding: 0.8vw 1vw;
+    align-self: center;
+    transition: background-color 0.2s ease-in;
+    position: relative;
+    z-index: 10;
+}
+
+.sign-up-btn:hover {
+    background-color: #b34848;
+    transition: background-color 0.2s ease-in;
+}
+
+.volunteer-banner {
+    width: 100%;
+    height: auto;
+    position: absolute;
+    z-index: 0;
+    top: -5.5vw;
+}
+
+.container2 {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20vw;
+    padding: 5vw;
+}
+
+.subcontainer2{
+    padding: 3vw;
+}
+
+.subcontainer2 > p:first-child,
+.container3 > p:first-child,
+.container4 > p:first-child,
+.container5 > p:first-child{
+    font-family: "One-Little-Font";
+    font-size: 3vw;
+    font-weight: 600;
+    color: #B9375D;
+}
+
+ul.why-volunteer{
+    list-style-type: none;
+}
+
+ul.why-volunteer > li:nth-child(odd),
+.subcontainer3 p{
+    font-family: "Open-Sans-Bold";
+    color: #B9375D;
+    font-size: 2vw;
+}
+
+ul.why-volunteer > li:nth-child(even),
+.subcontainer2 > p:nth-child(2),
+.subsubcontainer4 > p:nth-child(3),
+.accordion-body{
+    font-family: "Open-Sans-Regular";
+    color: black;
+    font-size: 1.3vw;
+}
+
+ul.why-volunteer > li:nth-child(even){
+    position: relative;
+    top: -0.3vw;
+    margin-bottom: 0.5vw;
+}
+
+.container2-image {
+    width: 35vw;
+    height: auto;
+    border-radius: 2vw;
+    border: solid white 4px;
+}
+
+.pink-paw {
+    width: 2.8vw;
+    height: auto;
+}
+
+.pink-paw-container{
+    display:flex;
+    flex-direction: column;
+    gap: 4.6vw;
+}
+
+.shadow {
+    top: -5.5vw;
+    position: absolute;
+    height: 56vw;
+    width: 100%;
+    background-image: linear-gradient(to bottom, rgb(0, 0, 0, 0.6), rgba(129, 76, 76,0.3) 30%, rgba(0,0,0,0.6) 80%);
+    z-index: 5;
+}
+
+.container3 {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 3vw;
+}
+
+.subcontainer3{
+    display: flex;
+    gap: 1.2vw;
+}
+
+.subcontainer3 > div{
+    display: flex;
+    flex-direction: column;
+    align-items: center
+}
+
+.subcontainer3 > div:nth-child(even){
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    line-height: 2.5vw;
+    position: relative;
+    top: 2vw;
+}
+
+.subcontainer3 img{
+    width: 22vw;
+    height: auto;
+}
+
+.container4{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10vw;
+}
+
+.subcontainer4{
+    display: flex;
+    gap: 2vw;
+}
+
+.subsubcontainer4{
+    width: 25vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: white;
+    border-radius: 2vw;
+    padding: 3vw 1.5vw;
+    box-shadow: rgba(0,0,0,0.3) 2px 2px 3px;
+}
+
+.subsubcontainer4 > p:nth-child(2) {
+    font-family: "Open-Sans-Bold";
+    text-align: center;
+    color: black;
+    font-size: 2vw;
+}
+
+.subsubcontainer4 > p:nth-child(3) {
+    text-align: center;
+}
+
+.subsubcontainer4 > img{
+    width: 13vw;
+    height: auto;
+    margin-bottom: 0.7vw;
+}
+
+.container5 {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10vw;
+    margin-bottom: 10vw;
+}
+
+.accordion-button, .accordion-button:focus {
+    background-color: #D25D5D;
+    border-radius: 1vw !important;
+    box-shadow: rgba(0,0,0,0.2) 2px 2px 3px;
+}
+
+.accordion-item {
+    border-radius: 1vw !important;
+    margin-bottom: 1vw;
+    box-shadow: none;
+}
+
+.accordion-button:not(.collapsed) {
+    border-radius: 1vw 1vw 0 0 !important;
+    background-color: #D25D5D;
+    color: white;
+    box-shadow: none;
+    box-shadow: rgba(0,0,0,0.2) 2px 2px 3px;
+}
+
+.accordion-header button {
+    font-family: "Open-Sans-Regular";
+    font-weight: 600;
+    font-size: 1.7vw;
+    color: white;
+}
+
+.accordion {
+    border-radius: 1vw;
+}
+
+.accordion-button::after {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 20 20' fill='none' stroke='%23ffffff' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+}
+
+.accordion-button:not(.collapsed)::after {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 20 20' fill='none' stroke='%23ffffff' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+}
+
+.accordion-collapse {
+    box-shadow: rgba(0,0,0,0.2) 2px 2px 3px;
+    border-radius: 0 0 1vw 1vw;
+}

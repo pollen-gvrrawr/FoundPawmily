@@ -1,0 +1,249 @@
+﻿@{
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+@{
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<link rel="stylesheet" href="../Content/swiper-bundle.min.css">
+<link rel="stylesheet" href="../Content/main-css/volunteerform.css">
+<div class="container1">
+    <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <img src="../Content/images/Volunteer/volunteer-1.jpg" alt="Volunteers" />
+            </div>
+            <div class="swiper-slide">
+                <img src="../Content/images/Volunteer/volunteer-2.jpg" alt="Volunteers" />
+            </div>
+            <div class="swiper-slide">
+                <img src="../Content/images/Volunteer/volunteer-3.jpg" alt="Volunteers" />
+            </div>
+            <div class="swiper-slide">
+                <img src="../Content/images/Volunteer/volunteer-4.jpg" alt="Volunteers" />
+            </div>
+            <div class="swiper-slide">
+                <img src="../Content/images/Volunteer/volunteer-5.jpg" alt="Volunteers" />
+            </div>
+            <div class="swiper-slide">
+                <img src="../Content/images/Volunteer/volunteer-6.jpg" alt="Volunteers" />
+            </div>
+            <div class="swiper-slide">
+                <img src="../Content/images/Volunteer/volunteer-7.jpg" alt="Volunteers" />
+            </div>
+            <div class="swiper-slide">
+                <img src="../Content/images/Volunteer/volunteer-8.jpg" alt="Volunteers" />
+            </div>
+        </div>
+    </div>
+    <div class="form-container">
+        <p class="mb-0">Volunteer at a Shelter</p>
+        <p class="text-center" style="width: 43vw;">Kindly fill out the form below and we'll get back to you once we have reviewed your slot reservation via email.</p>
+        <form action="" method="post" class="needs-validation" name="volunteerForm" novalidate>
+            <div class="row">
+                <div class="col d-flex align-items-center mb-2" style="padding: 0">
+                    <p class="mb-1 pe-3 title-form">Personal Information</p>
+                    <hr />
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col-5 px-1">
+                    <label for="fname" class="form-label ">First name <span style="color: red;">*</span></label>
+                    <input name="fname" type="text" class="form-control no-valid-feedback" id="fname" ng-pattern="/^[A-ZÑ][a-zñ]+(?:\s[A-ZÑ][a-zñ]+)*$/" ng-model="fname" ng-class="{'is-invalid': volunteerForm.fname.$touched && volunteerForm.fname.$invalid}" ng-required="true" maxlength="35" ng-keypress="lettersOnly($event)">
+                    <div class="invalid-feedback">
+                        Capitalize the first letter. Up to 35 characters only.
+                    </div>
+                </div>
+                <div class="col-2 px-1">
+                    <label for="mi" class="form-label">MI</label>
+                    <input name="mi" type="text" class="form-control no-valid-feedback" ng-model="mi" ng-pattern="/^[A-ZÑ]{1,3}$/" id="mi" ng-class="{'is-invalid': volunteerForm.mi.$invalid}" maxlength="3" ng-keypress="lettersOnly($event)">
+                    <div class="invalid-feedback">
+                        1 to 3 capital letters
+                    </div>
+                </div>
+                <div class="col-5 px-1">
+                    <label for="lname" class="form-label">Last name <span style="color: red;">*</span></label>
+                    <input name="lname" type="text" class="form-control no-valid-feedback" id="lname" ng-pattern="/^[A-ZÑ][a-zñ]+(?:\s[A-ZÑ][a-zñ]+)*$/" ng-model="lname" ng-class="{'is-invalid': volunteerForm.lname.$touched && volunteerForm.lname.$invalid}" ng-required="true" maxlength="35" ng-keypress="lettersOnly($event)">
+                    <div class="invalid-feedback">
+                        Capitalize the first letter. Up to 35 characters only.
+                    </div>
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col px-1">
+                    <label class="form-label d-block mb-2">Gender <span style="color: red;">*</span></label>
+                    <div class="form-check-inline me-3">
+                        <input class="form-check-input" type="radio" name="gender" id="male" value="Male" ng-model="gender" ng-required="true">
+                        <label class="form-check-label" for="male">
+                            Male
+                        </label>
+                    </div>
+                    <div class="form-check-inline">
+                        <input class="form-check-input" type="radio" name="gender" id="female" value="Female" ng-model="gender">
+                        <label class="form-check-label" for="female">
+                            Female
+                        </label>
+                    </div>
+                    <div class="invalid-feedback" ng-show="adoptForm.petsbefore.$touched && adoptForm.petsbefore.$invalid">
+                        Please select an answer.
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-5 px-1">
+                    <label for="email" class="form-label">Email address <span style="color: red;">*</span></label>
+                    <input name="email" type="email" class="form-control no-valid-feedback" id="email" placeholder="name@site.com" ng-model="email" ng-class="{'is-invalid': volunteerForm.email.$touched && volunteerForm.email.$invalid}" ng-required="true" maxlength="254">
+                    <div class="invalid-feedback">
+                        Please enter a valid email address.
+                    </div>
+                </div>
+                <div class="col-4 px-1">
+                    <label for="phone" class="form-label">Phone <span style="color: red;">*</span></label>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text">+63</span>
+                        <input name="phone" id="phone" type="text" class="form-control no-valid-feedback" placeholder="9XXXXXXXXX" ng-pattern="/^9\d{9}$/" ng-model="phone" ng-class="{'is-invalid': volunteerForm.phone.$touched && volunteerForm.phone.$invalid}" ng-required="true" maxlength="10" ng-keypress="numbersOnly($event)">
+                        <div class="invalid-feedback">
+                            10 digits, starting with number 9
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3 px-1">
+                    <label for="bday" class="form-label">Birthdate <span style="color: red;">*</span></label>
+                    <input name="bday" type="date" class="form-control no-valid-feedback" id="bday" ng-model="bday" validate-age ng-class="{'is-invalid': volunteerForm.bday.$touched && volunteerForm.bday.$invalid}" ng-required="true" max="{{ today | date:'yyyy-MM-dd' }}">
+                    <div class="invalid-feedback">
+                        Must be 18yrs old or above
+                    </div>
+                </div>
+            </div>
+            <div class="row mb-2 d-flex align-items-end">
+                <div class="col-2 px-1">
+                    <label for="houseno" class="form-label">Address <span style="color: red;">*</span></label>
+                    <input name="houseno" type="text" class="form-control no-valid-feedback" id="houseno" placeholder="House #" ng-pattern="/[0-9]+[A-Za-z\-0-9]*/" ng-model="houseno" ng-class="{'is-invalid': volunteerForm.houseno.$touched && volunteerForm.houseno.$invalid}" ng-required="true" maxlength="10">
+                </div>
+                <div class="col-5 px-1">
+                    <input name="street" type="text" class="form-control no-valid-feedback" id="street" placeholder="Street" ng-pattern="/[A-Za-zÑñ0-9\s.,'\-]+/" ng-model="street" ng-class="{'is-invalid': volunteerForm.street.$touched && volunteerForm.street.$invalid}" ng-required="true" maxlength="50">
+                </div>
+                <div class="col-5 px-1">
+                    <input name="brgy" type="text" class="form-control no-valid-feedback" id="brgy" placeholder="Brgy" ng-pattern="/[A-Za-z0-9\s.,'\-]+/" ng-model="brgy" ng-class="{'is-invalid': volunteerForm.brgy.$touched && volunteerForm.brgy.$invalid}" ng-required="true" maxlength="50">
+                </div>
+            </div>
+            <div class="row mb-5">
+                <div class="col-5 px-1">
+                    <input name="city" type="text" class="form-control no-valid-feedback" id="city" placeholder="City" ng-pattern="/[A-Za-z0-9\s.,'\-]+/" ng-model="city" ng-class="{'is-invalid': volunteerForm.city.$touched && volunteerForm.city.$invalid}" ng-required="true" maxlength="50">
+                </div>
+                <div class="col-5 px-1">
+                    <input name="province" type="text" class="form-control no-valid-feedback" id="province" placeholder="Province" ng-pattern="/[A-Za-z0-9\s.,'\-]+/" ng-model="province" ng-class="{'is-invalid': volunteerForm.province.$touched && volunteerForm.province.$invalid}" ng-required="true" maxlength="50">
+                </div>
+                <div class="col-2 px-1">
+                    <input name="zip" type="text" class="form-control no-valid-feedback" id="zip" placeholder="ZIP" ng-pattern="/^[0-9]{4}$/" ng-model="zip" ng-class="{'is-invalid': volunteerForm.zip.$touched && volunteerForm.zip.$invalid}" ng-required="true" maxlength="4" ng-keypress="numbersOnly($event)">
+                    <div class="invalid-feedback">
+                        4 digits only
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col d-flex align-items-center mb-2" style="padding: 0">
+                    <p class="mb-1 pe-3 title-form">Volunteer Slot Reservation</p>
+                    <hr />
+                </div>
+            </div>
+            <div class="row mb-3">
+                <div class="col px-1">
+                    <label for="shelter" class="form-label">Choose a shelter to volunteer at <span style="color: red;">*</span></label>
+                    <select name="shelter" id="shelter" class="form-select no-valid-feedback" ng-model="shelter" ng-class="{'is-invalid': volunteerForm.shelter.$touched && volunteerForm.shelter.$invalid}" ng-required="true">
+                        <option selected disabled value="">List of available shelters</option>
+                        <option value="Paws Animal Rescue">Paws Animal Rescue</option>
+                        <option value="FurEver Homes Shelter">FurEver Homes Shelter</option>
+                        <option value="Happy Tails Adoption Center">Happy Tails Adoption Center</option>
+                        <option value="Whiskers of Hope Rescue">Whiskers of Hope Rescue</option>
+                        <option value="Bright Paws Adoption Shelter">Bright Paws Adoption Shelter</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row mb-5">
+                <div class="col px-1">
+                    <label for="volunteerDate" class="form-label d-block mb-2">Date <span style="color: red;">*</span></label>
+                    <input class="form-control" type="date" ng-attr-min="{{minVolunteerDate | date:'yyyy-MM-dd'}}" max="{{ maxVolunteerDate | date:'yyyy-MM-dd' }}" id="volunteerDate" name="volunteerDate" ng-model="volunteerDate" ng-class="{'is-invalid': volunteerForm.volunteerDate.$touched && volunteerForm.volunteerDate.$invalid}" ng-required="true">
+                </div>
+                <div class="col px-1">
+                    <label for="volunteerTime" class="form-label d-block mb-2">Time <span style="color: red;">*</span></label>
+                    <select name="volunteerTime" id="volunteerTime" class="form-select no-valid-feedback" ng-model="volunteerTime" ng-class="{'is-invalid': volunteerForm.volunteerTime.$touched && volunteerForm.volunteerTime.$invalid}" ng-required="true">
+                        <option selected disabled value="">Select Time</option>
+                        <option ng-repeat="h in hours" value="{{h}}">{{h}}</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col d-flex gap-2 justify-content-center">
+                    <button type="button" class="btn w-25 submit-btn" ng-click="submitVolunteerForm()">Submit</button>
+                    <input type="reset" name="reset" value="Cancel" class="btn w-25 cancel-btn" />
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<script src="../Scripts/sweetalert2.all.min.js"></script>
+<script src="../Scripts/bootstrap.bundle.min.js"></script>
+<script src="../Scripts/swiper-bundle.min.js"></script>
+<script>
+    (() => {
+        'use strict'
+        const forms = document.querySelectorAll('.needs-validation')
+
+        Array.from(forms).forEach(form => {
+            form.addEventListener('submit', event => {
+                if (!form.checkValidity()) {
+                    event.preventDefault()
+                    event.stopPropagation()
+                }
+
+                form.classList.add('was-validated')
+            }, false)
+        })
+    })()
+</script>
+<script>
+    var swiper = new Swiper(".mySwiper", {
+        effect: "creative",
+        creativeEffect: {
+            prev: {
+                shadow: true,
+                translate: [0, 0, -400],
+            },
+            next: {
+                translate: ["100%", 0, 0],
+            },
+        },
+        grabCursor: false,
+        allowTouchMove: false,
+        autoplay: {
+            delay: 3000,
+            disableOnInteraction: false
+        },
+        loop: true
+    });
+</script>
+<!--<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const bdayInput = document.getElementById("bday");
+
+        bdayInput.addEventListener("input", function () {
+            const today = new Date();
+            const birthDate = new Date(this.value);
+
+            let age = today.getFullYear() - birthDate.getFullYear();
+            if (today.getMonth() < birthDate.getMonth() ||
+                today.getMonth() == birthDate.getMonth() && today.getDate() < birthDate.getDate()) {
+                age--;
+            }
+
+            if (age < 18) {
+                this.setCustomValidity("invalid");
+            } else {
+                this.setCustomValidity("");
+            }
+        });
+    });
+
+</script>-->

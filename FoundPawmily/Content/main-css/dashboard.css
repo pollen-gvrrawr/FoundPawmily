@@ -1,0 +1,233 @@
+﻿@font-face {
+    font-family: "Open-Sans-Bold";
+    src: url(/Content/fonts/OpenSans-Bold.ttf);
+}
+
+@font-face {
+    font-family: "Open-Sans-Regular";
+    src: url(/Content/fonts/OpenSans-Regular.ttf);
+}
+
+@font-face {
+    font-family: "Open-Sans-Italic";
+    src: url(/Content/fonts/OpenSans-Italic.ttf);
+}
+
+@font-face {
+    font-family: "One-Little-Font";
+    src: url(/Content/fonts/OneLittleFont-Regular.otf);
+}
+
+div.sidebar {
+    background-color: #D25D5D;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 7vw;
+    overflow-x: hidden;
+    overflow-y: auto;
+    transition: width 0.5s ease;
+    box-shadow: 0 0 10px rgba(36, 54, 66, 0.688);
+    z-index: 5;
+    display: flex;
+    flex-direction: column;
+}
+
+.paw-sidebar {
+    position: absolute;
+    opacity: 1;
+    margin-top: 3vw;
+    width: 4vw;
+    height: auto;
+    align-self: center;
+    transition: opacity 0.1s ease;
+}
+
+.logo-sidebar {
+    opacity: 0;
+    margin-top: 2vw;
+    width: 13vw;
+    height: auto;
+    align-self: center;
+    transition: opacity 0.1s ease;
+}
+
+
+.sidebar:hover {
+    width: 20vw;
+    transition: width 0.5s ease;
+}
+
+.sidebar:hover .paw-sidebar {
+    opacity: 0;
+}
+
+.sidebar:hover .logo-sidebar {
+    opacity: 1;
+}
+
+.sidebar:hover .sidebar-text {
+    opacity: 1;
+}
+
+.sidebar:hover .sidebar-text-title {
+    opacity: 1;
+}
+
+ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin-top: 2vw;
+}
+
+li {
+    display: flex;
+    align-items: center;
+    padding: 0.5vw 0;
+}
+
+.sidebar-icon {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 6vw;
+    height: 3.2vw;
+    padding: 0.5vw;
+    padding-left: 1vw;
+}
+
+.sidebar-pfp {
+    position: relative;
+    padding: 0.5vw;
+    min-width: 3vw;
+    height: 4.2vw;
+    margin-left: 1.3vw;
+    margin-right: 0.3vw;
+}
+
+.sidebar-text {
+    font-family: "Open-Sans-Regular";
+    position: relative;
+    opacity: 0;
+    line-height: 0.8vw;
+    transition: opacity 0.1s ease;
+    color: white;
+    text-decoration: none;
+    position: relative;
+    text-transform: uppercase;
+    font-size: 1.2vw;
+    white-space: nowrap;
+}
+
+p {
+    margin-bottom: 0;
+}
+
+li.option:hover {
+    background-color: #df7b7b;
+    cursor: pointer;
+}
+
+li.option:last-child {
+    position: absolute;
+    width: 20vw;
+    bottom: 2vw;
+}
+
+.container1 {
+    position: relative;
+    margin: 1vw 3vw 1vw 8vw;
+    padding: 2vw;
+    max-width: 92vw;
+}
+
+/*TABLE*/
+table {
+    font-family: "Open-Sans-Regular";
+    font-size: 0.7vw;
+}
+
+th:first-child {
+    border-top-left-radius: 0.5vw;
+}
+
+th:last-child {
+    border-top-right-radius: 0.5vw;
+}
+
+th {
+    text-align: center;
+    vertical-align: middle;
+    font-size: 0.7vw;
+}
+
+tbody > tr:nth-child(even) {
+    background-color: #F1F1F1 !important;
+}
+
+tbody > tr:nth-child(odd) {
+    background-color: white !important;
+}
+
+thead {
+    background-color: #B9375D;
+    color: white;
+}
+
+tr:last-child td:first-child {
+    border-bottom-left-radius: 0.5vw;
+}
+
+tr:last-child td:last-child {
+    border-bottom-right-radius: 0.5vw;
+}
+
+.transparent-btn {
+    display: flex;
+    background-color: transparent;
+    width: 6vw;
+    height: 3vw;
+    align-self: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.edit-btn {
+    background-color: #D25D5D;
+    border-radius: 5vw;
+    width: 3vw;
+    height: 3vw;
+    align-self: center;
+    transition: background-color 0.1s ease-in;
+}
+
+.edit-btn:hover {
+    background-color: #b34848;
+    transition: background-color 0.1s ease-in;
+}
+
+.btn-archive {
+    font-size: 1vw;
+    background-color: #D25D5D;
+    color: white;
+    font-family: Open-Sans-Regular;
+    border-radius: 5vw;
+    width: 10vw;
+    padding: 0.8vw 1vw;
+    align-self: center;
+    transition: background-color 0.1s ease-in;
+}
+
+.btn-archive:hover {
+    color: white;
+    background-color: #b34848;
+    transition: background-color 0.1s ease-in;
+}
+
+.header-text {
+    color: #B9375D;
+    font-family: Open-Sans-Bold;
+    text-transform: capitalize;
+}

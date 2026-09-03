@@ -1,0 +1,101 @@
+﻿@font-face {
+    font-family: "Open-Sans-Bold";
+    src: url(/Content/fonts/OpenSans-Bold.ttf);
+}
+
+@font-face {
+    font-family: "Open-Sans-Regular";
+    src: url(/Content/fonts/OpenSans-Regular.ttf);
+}
+
+@font-face {
+    font-family: "Open-Sans-Italic";
+    src: url(/Content/fonts/OpenSans-Italic.ttf);
+}
+
+@font-face {
+    font-family: "One-Little-Font";
+    src: url(/Content/fonts/OneLittleFont-Regular.otf);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.logo{
+    height: 4.8vw;
+    width: auto;
+    padding: 1vw;
+}
+
+nav {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: sticky;
+    width: 100%;
+    top: 0;
+    z-index: 20;
+    transition: background-color ease-in 0.1s;
+}
+
+.nav-container {
+    list-style-type: none;
+    display: flex;
+    gap: 4vw;
+    padding: 0;
+    margin: 0;
+    margin-left: auto;
+    padding-right: 4vw;
+    font-family: "Open-Sans-Regular";
+    font-size: 1.3vw;
+    color: white;
+    text-decoration: none;
+}
+
+.nav-container li:hover {
+    color: #BCBCBC;
+    cursor: pointer;
+}
+
+footer {
+    background-color: #D25D5D;
+    padding: 4vw;
+    margin-top: auto;
+    position: relative;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+.footer-logo {
+    width: 13vw;
+    height: auto;
+}
+
+.socials-container img {
+    width: 2vw;
+    height: auto;
+    cursor: pointer;
+}
+
+.footer-directory li {
+    color: white;
+    font-family: "Open-Sans-Regular";
+    font-size: 1.3vw;
+    text-decoration: none;
+}
+
+.footer-directory li:hover {
+    color: #AF0033;
+    cursor: pointer;
+}
+
+.copyright-text {
+    color: white;
+    font-family: "Open-Sans-Regular";
+    font-size: 1vw;
+    font-weight: 300;
+}

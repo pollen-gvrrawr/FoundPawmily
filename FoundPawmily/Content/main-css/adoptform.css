@@ -1,0 +1,308 @@
+﻿#navbar {
+    background-color: rgb(210, 93, 93);
+}
+
+.swiper {
+    width: 25vw;
+    height: 35vw;
+    margin: 0 7vw !important;
+}
+
+.swiper-slide {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 1vw;
+    font-size: 22px;
+    font-weight: bold;
+    color: black;
+    background-color: white;
+    box-shadow: 2px 2px 3px rgba(0,0,0,0.1);
+    padding: 1.2vw 1.2vw 0.2vw 1.2vw;
+}
+
+.swiper-slide img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 1vw;
+}
+
+.swiper-slide p {
+    font-family: "Open-Sans-Bold";
+    font-size: 1.5rem;
+}
+
+.container1{
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 3vw 0;
+}
+
+.form-container > p:first-child {
+    font-family: "One-Little-Font";
+    font-size: 3rem;
+    font-weight: 600;
+    color: #B9375D;
+}
+
+.form-container > p:nth-child(2) {
+    font-family: "Open-Sans-Regular";
+    font-size: 1rem;
+    color: black;
+}
+
+.form-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 80vh;
+    overflow-y:auto;
+    width: 50vw;
+    font-family: "Open-Sans-Regular";
+    padding: 3vw;
+}
+
+.form-control.is-valid,
+.was-validated .form-control:valid {
+    border-color: #ced4da !important;
+    background-image: none !important;
+    box-shadow: none !important;
+}
+
+input:focus, select:focus, .form-control.is-valid:focus,
+.was-validated .form-control:valid:focus {
+    border: dotted 3px #B9375D !important;
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+
+label {
+    margin-bottom: 0.2rem !important;
+}
+
+hr {
+    margin: 0;
+    flex-grow: 1;
+    height: 0.15vw;
+    border: none;
+    background-color: #B9375D;
+    opacity: 1;
+}
+
+.title-form {
+    font-family: "Open-Sans-Bold";
+    color: #B9375D;
+    font-size: 1.5rem;
+}
+
+.form-container::-webkit-scrollbar {
+    color: transparent;
+    width: 0.5vw;
+}
+
+.form-container::-webkit-scrollbar-track {
+    background: rgba(255,255,255, 0.3);
+    border-radius: 1rem;
+}
+
+.form-container::-webkit-scrollbar-thumb {
+    background: #DEB1B1;
+    border-radius: 1rem;
+}
+
+input[type="radio"]:focus, input[type="radio"]:checked {
+    outline: none !important;
+    box-shadow: 0 0 0 3px #B9375D33 !important;
+    border: none !important;
+    background-color: #B9375D;
+    border-radius: 50%;
+}
+
+.submit-btn {
+    background-color: #D25D5D;
+    border: solid 2px white;
+    color: white;
+    border-radius: 5vw;
+    font-family: "Open-Sans-Regular";
+    font-size: 1rem;
+    padding: 0.5vw 0;
+    transition: background-color 0.2s ease-in;
+}
+
+.submit-btn:hover {
+    background-color: #b34848;
+    transition: background-color 0.2s ease-in;
+    color: white;
+    border: solid 2px white;
+}
+
+.cancel-btn {
+    background-color: #EDEDED;
+    color: black;
+    border-radius: 5vw;
+    font-family: "Open-Sans-Regular";
+    font-size: 1rem;
+    padding: 0.5vw 0;
+    transition: background-color 0.2s ease-in;
+}
+
+.cancel-btn:hover {
+    background-color: #DDDDDD;
+    transition: background-color 0.2s ease-in;
+}
+
+.card-body > h5:first-child{
+    font-family: "Open-Sans-Bold";
+    font-size: 1.2rem;
+    color: black;
+}
+
+.card-body > p:nth-child(2) {
+    font-family: "Open-Sans-Regular";
+    font-size: 1rem;
+    color: black;
+}
+
+.notice-text {
+    font-family: "One-Little-Font";
+    font-size: 2rem;
+    font-weight: 600;
+    color: #B9375D;
+    margin-bottom: 0;
+    text-align: center;
+}
+
+.details-btn {
+    font-family: "Open-Sans-Regular";
+    font-size: 0.8rem;
+    color: white;
+    background-color: #D25D5D;
+    transition: background-color 0.2s ease-in;
+    text-decoration: none;
+}
+
+.gallery-btn {
+    font-family: "Open-Sans-Regular";
+    font-size: 1rem;
+    color: white;
+    background-color: #D25D5D;
+    transition: background-color 0.2s ease-in;
+    text-decoration: none;
+    padding: 1vw 2vw 1vw 2vw;
+    border-radius: 1vw;
+}
+
+.gallery-btn:hover {
+    font-family: "Open-Sans-Regular";
+    font-size: 1rem;
+    color: white;
+    background-color: #b34848;
+    transition: background-color 0.2s ease-in;
+    text-decoration: none;
+    padding: 1vw 2vw 1vw 2vw;
+    border-radius: 1vw;
+}
+
+.details-text, .details-text:hover {
+    font-family: "Open-Sans-Regular";
+    font-size: 0.8rem;
+    color: white;
+    text-decoration: none;
+}
+
+.details-btn:hover {
+    font-family: "Open-Sans-Regular";
+    font-size: 0.8rem;
+    color: white;
+    background-color: #b34848;
+    transition: background-color 0.2s ease-in;
+    text-decoration: none;
+}
+
+.card {
+    box-shadow: 1px 1px 1px rgba(0,0,0,0.1);
+}
+
+.container2{
+    padding: 5vw;
+}
+
+table{
+    font-family: "Open-Sans-Regular"
+}
+
+th:first-child {
+    border-top-left-radius: 1vw;
+}
+
+th:last-child {
+    border-top-right-radius: 1vw;
+}
+
+th {
+    text-align: center;
+    vertical-align: middle;
+    font-size: 0.9rem;
+}
+
+th:nth-child(6){
+    width: 9vw;
+}
+
+th:nth-child(7){
+    width: 5vw;
+}
+
+th:nth-child(10),
+th:last-child{
+    width: 8vw;
+}
+
+th:nth-child(8),
+th:nth-child(9){
+    width: 5vw;
+}
+
+th:nth-child(4), th:nth-child(5){
+    width: 8vw;
+}
+
+th:first-child{
+    width: 10vw;
+}
+
+tr:nth-child(even) {
+    background-color: #F1F1F1;
+}
+
+tbody > tr:nth-child(odd) {
+    background-color: white;
+}
+
+thead {
+    background-color: #B9375D;
+    color: white;
+}
+
+td:nth-child(7),
+td:nth-child(8),
+td:nth-child(9),
+td:nth-child(10),
+td:last-child {
+    text-align: center;
+}
+
+tr:last-child td:first-child {
+    border-bottom-left-radius: 1vw;
+}
+
+tr:last-child td:last-child {
+    border-bottom-right-radius: 1vw;
+}

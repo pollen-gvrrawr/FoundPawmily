@@ -1,0 +1,137 @@
+﻿@{
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<link rel="stylesheet" href="../Content/main-css/pets.css">
+<link rel="stylesheet" href="../Content/swiper-bundle.min.css">
+<div class="container1">
+    <p class="mb-0">meet our dogs & pups looking for new homes</p>
+    <p>find more furry buddies using the search bar!</p>
+    <form action="/" method="post">
+        <input class="pet-search rounded-5" type="search" placeholder="Search for furiends by location, size, or gender..." ng-model="dogSearch" />
+        <button type="submit" class="search-icon">
+            <img src="../Content/icons/Search.png" alt="Search" style="width: 1.8vw; height: auto;">
+        </button>
+    </form>
+</div>
+<div ng-init="getPets('Dog')" class="d-flex flex-column">
+    <p class="mb-2 subtitle text-center d-block" ng-if="dogSearch">search results</p>
+    <div class="search-results mt-4" ng-if="dogSearch">
+        <div class="pet-container2" ng-repeat="pet in petsData | filter:dogSearch" ng-click="redirectPetProfile(pet.petID)">
+            <img src="{{pet.imagePath}}" alt="{{pet.name}}" class="pet-image" />
+            <p class="pet-name">{{pet.name}}</p>
+            <p class="pet-info">{{pet.petType}} | {{pet.gender}} | {{pet.location}}</p>
+        </div>
+    </div>
+    <div class="container2">
+        <p class="mb-2 subtitle text-center">pups in metro manila</p>
+        <div class="subcontainer2">
+            <div class="swiper mySwiper1">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide pet-container" ng-repeat="pet in petsData | limitTo:10:0" ng-click="redirectPetProfile(pet.petID)">
+                        <img src="{{pet.imagePath}}" alt="Dog" class="pet-image" />
+                        <p>{{pet.name}}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-button-next swiper-button-next1"></div>
+            <div class="swiper-button-prev swiper-button-prev1"></div>
+        </div>
+        <div class="swiper-pagination swiper-pagination1"></div>
+    </div>
+    <div class="container3">
+        <p class="mb-2 subtitle text-center">pups in cebu</p>
+        <div class="subcontainer3">
+            <div class="swiper mySwiper2">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide pet-container" ng-repeat="pet in petsData | limitTo:10:10" ng-click="redirectPetProfile(pet.petID)">
+                        <img src="{{pet.imagePath}}" alt="Dog" class="pet-image" />
+                        <p>{{pet.name}}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-button-next swiper-button-next2"></div>
+            <div class="swiper-button-prev swiper-button-prev2"></div>
+        </div>
+        <div class="swiper-pagination swiper-pagination2"></div>
+    </div>
+    <div class="container4">
+        <p class="mb-2 subtitle text-center">pups in cavite</p>
+        <div class="subcontainer4">
+            <div class="swiper mySwiper3">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide pet-container" ng-repeat="pet in petsData | limitTo:10:20" ng-click="redirectPetProfile(pet.petID)">
+                        <img src="{{pet.imagePath}}" alt="Dog" class="pet-image" />
+                        <p>{{pet.name}}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-button-next swiper-button-next3"></div>
+            <div class="swiper-button-prev swiper-button-prev3"></div>
+        </div>
+        <div class="swiper-pagination swiper-pagination3"></div>
+    </div>
+</div>
+<script>
+    const navbar = document.getElementById("navbar");
+
+    window.addEventListener("scroll", () => {
+        if (window.scrollY > 100) {
+            navbar.style.boxShadow = "0px 3px 5px rgba(0, 0, 0, 0.2)";
+        } else {
+            navbar.style.boxShadow = "none";
+        }
+    });
+</script>
+<script src="../Scripts/swiper-bundle.min.js"></script>
+<script>
+    var swiper = new Swiper(".mySwiper1", {
+        slidesPerView: 5,
+        slidesPerGroup: 5,
+        spaceBetween: 20,
+        loop: false,
+        speed: 1000,
+        pagination: {
+            el: ".swiper-pagination1",
+            clickable: true,
+        },
+        navigation: {
+            nextEl: '.swiper-button-next1',
+            prevEl: '.swiper-button-prev1',
+        },
+    });
+</script>
+<script>
+    var swiper = new Swiper(".mySwiper2", {
+        slidesPerView: 5,
+        slidesPerGroup: 5,
+        spaceBetween: 20,
+        loop: false,
+        speed: 1000,
+        pagination: {
+            el: ".swiper-pagination2",
+            clickable: true,
+        },
+        navigation: {
+            nextEl: '.swiper-button-next2',
+            prevEl: '.swiper-button-prev2',
+        },
+    });
+</script>
+<script>
+    var swiper = new Swiper(".mySwiper3", {
+        slidesPerView: 5,
+        slidesPerGroup: 5,
+        spaceBetween: 20,
+        loop: false,
+        speed: 1000,
+        pagination: {
+            el: ".swiper-pagination3",
+            clickable: true,
+        },
+        navigation: {
+            nextEl: '.swiper-button-next3',
+            prevEl: '.swiper-button-prev3',
+        },
+    });
+</script>

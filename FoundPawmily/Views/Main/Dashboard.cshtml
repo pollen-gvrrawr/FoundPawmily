@@ -1,0 +1,255 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Found Pawmily | Dashboard</title>
+    <link rel="stylesheet" href="../Content/bootstrap.min.css">
+    <link rel="stylesheet" href="../Content/dataTables.dataTables.min.css" />
+    <link rel="stylesheet" href="../Content/main-css/dashboard.css">
+</head>
+<body ng-app="FoundPawmily" ng-controller="FoundPawmilyController" style="background-color: #E7D3D3;">
+    <div class="row m-0 p-0">
+        <div class="sidebar p-0 m-0 pt-3">
+            <img src="../Content/images/paw-white.png" class="paw-sidebar" alt="White Paw" />
+            <img src="../Content/images/logo-layered.png" class="logo-sidebar" alt="Found Pawmily" />
+            <ul>
+                <li style="background-color: #de6b6b; cursor: pointer" ng-click="redirectDashboard()">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="sidebar-icon" viewBox="0 0 24 24" fill="#ffffff"><g fill="none"><path d="M24 0v24H0V0h24ZM12.593 23.258l-.011.002l-.071.035l-.02.004l-.014-.004l-.071-.035c-.01-.004-.019-.001-.024.005l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427c-.002-.01-.009-.017-.017-.018Zm.265-.113l-.013.002l-.185.093l-.01.01l-.003.011l.018.43l.005.012l.008.007l.201.093c.012.004.023 0 .029-.008l.004-.014l-.034-.614c-.003-.012-.01-.02-.02-.022Zm-.715.002a.023.023 0 0 0-.027.006l-.006.014l-.034.614c0 .012.007.02.017.024l.015-.002l.201-.093l.01-.008l.004-.011l.017-.43l-.003-.012l-.01-.01l-.184-.092Z" /><path fill="#ffffff" d="M14 3a2 2 0 0 1 2 2v3h4a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-6a2 2 0 0 1 2-2h4V5a2 2 0 0 1 2-2h4Zm0 2h-4v14h4V5Zm6 5h-4v9h4v-9ZM8 13H4v6h4v-6Z" /></g></svg>
+                    <p class="sidebar-text">Dashboard</p>
+                </li>
+                <li class="option" ng-click="redirectTablePets()">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="sidebar-icon" viewBox="0 0 24 24" fill="#ffffff"><g fill="none"><path d="M24 0v24H0V0h24ZM12.594 23.258l-.012.002l-.071.035l-.02.004l-.014-.004l-.071-.036c-.01-.003-.019 0-.024.006l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427c-.002-.01-.009-.017-.016-.018Zm.264-.113l-.014.002l-.184.093l-.01.01l-.003.011l.018.43l.005.012l.008.008l.201.092c.012.004.023 0 .029-.008l.004-.014l-.034-.614c-.003-.012-.01-.02-.02-.022Zm-.715.002a.023.023 0 0 0-.027.006l-.006.014l-.034.614c0 .012.007.02.017.024l.015-.002l.201-.093l.01-.008l.003-.011l.018-.43l-.003-.012l-.01-.01l-.184-.092Z" /><path fill="#ffffff" d="M18.296 3.045a1 1 0 0 1 .657.652l.03.119l1.341 7.154c.103.55.151 1.095.148 1.63l-.012.4H21a1 1 0 0 1 .117 1.993L21 15h-.894c-.109.354-.24.699-.392 1.033l-.16.33l1.07.856a1 1 0 0 1-1.146 1.634l-.103-.072l-.936-.749A8.427 8.427 0 0 1 12 21a8.423 8.423 0 0 1-6.25-2.755l-.19-.213l-.935.749a1 1 0 0 1-1.343-1.477l.093-.085l1.07-.856a8.453 8.453 0 0 1-.435-1.012L3.894 15H3a1 1 0 0 1-.117-1.993L3 13h.54a8.483 8.483 0 0 1 .069-1.619l.067-.411l1.341-7.154a1 1 0 0 1 1.598-.604l.092.08l2.414 2.415a1 1 0 0 0 .576.284L9.828 6h4.344a1 1 0 0 0 .608-.206l.099-.087l2.414-2.414a1 1 0 0 1 1.003-.248Zm-.93 3.003L16.293 7.12a3 3 0 0 1-2.121.88H9.828a3 3 0 0 1-2.12-.879L6.632 6.048l-.992 5.29A6.5 6.5 0 0 0 5.545 13H7a1 1 0 1 1 0 2h-.492a.998.998 0 0 1 .71 1.696l-.095.086A6.436 6.436 0 0 0 12 19a6.43 6.43 0 0 0 4.696-2.02l.18-.2a1 1 0 0 1 .616-1.78H17a1 1 0 1 1 0-2h1.455a6.496 6.496 0 0 0-.096-1.662l-.993-5.29Zm-3.472 9.005a1 1 0 0 1-.447 1.341l-.553.277a2 2 0 0 1-1.788 0l-.553-.276a1 1 0 0 1 .894-1.79l.553.277l.553-.276a1 1 0 0 1 1.341.447ZM9.5 10a1.5 1.5 0 1 1 0 3a1.5 1.5 0 0 1 0-3Zm5 0a1.5 1.5 0 1 1 0 3a1.5 1.5 0 0 1 0-3Z" /></g></svg>
+                    <p class="sidebar-text">Pets for Adoption</p>
+                </li>
+                <li class="option" ng-click="redirectTableAdoptions()">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="sidebar-icon" viewBox="0 0 24 24" fill="#ffffff"><g fill="none"><path d="M24 0v24H0V0h24ZM12.594 23.258l-.012.002l-.071.035l-.02.004l-.014-.004l-.071-.036c-.01-.003-.019 0-.024.006l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427c-.002-.01-.009-.017-.016-.018Zm.264-.113l-.014.002l-.184.093l-.01.01l-.003.011l.018.43l.005.012l.008.008l.201.092c.012.004.023 0 .029-.008l.004-.014l-.034-.614c-.003-.012-.01-.02-.02-.022Zm-.715.002a.023.023 0 0 0-.027.006l-.006.014l-.034.614c0 .012.007.02.017.024l.015-.002l.201-.093l.01-.008l.003-.011l.018-.43l-.003-.012l-.01-.01l-.184-.092Z" /><path fill="#ffffff" d="M5.402 6.55a1 1 0 1 0-1.812.846l1.813-.845Zm15.008.842a1 1 0 1 0-1.813-.845l1.813.845ZM13 4a1 1 0 0 0-2 0h2Zm4 13.278c0 .148-.16.58-1.166 1.032c-.926.414-2.28.69-3.834.69v2c1.76 0 3.406-.308 4.651-.865c1.165-.522 2.349-1.45 2.349-2.857h-2ZM12 19c-1.554 0-2.908-.276-3.834-.69C7.159 17.858 7 17.425 7 17.277H5c0 1.407 1.184 2.335 2.349 2.857C8.594 20.692 10.24 21 12 21v-2Zm-5-1.722c0-.529.405-1.338 1.364-2.069A6.069 6.069 0 0 1 12 14v-2c-1.89 0-3.6.666-4.849 1.619C5.938 14.544 5 15.874 5 17.278h2ZM12 14c1.425 0 2.714.506 3.636 1.21c.959.73 1.364 1.54 1.364 2.068h2c0-1.404-.938-2.734-2.151-3.66A8.068 8.068 0 0 0 12 12v2ZM6.112 9.255c.15.323.171.627.127.839c-.045.21-.132.266-.158.278l.845 1.813c.725-.338 1.128-1.006 1.27-1.68c.142-.674.044-1.418-.272-2.096l-1.812.846Zm-.031 1.117c-.026.012-.125.044-.315-.058c-.19-.102-.41-.313-.56-.637l-1.813.845c.316.678.823 1.23 1.43 1.556c.608.325 1.379.445 2.103.107l-.845-1.813Zm-.876-.695c-.15-.323-.171-.628-.127-.839c.044-.211.132-.266.158-.278L4.39 6.747c-.725.338-1.128 1.005-1.27 1.68c-.142.674-.044 1.418.272 2.095l1.812-.845Zm.03-1.117c.027-.013.125-.044.316.058c.19.102.41.313.56.637l1.813-.846c-.316-.677-.823-1.23-1.43-1.555c-.608-.325-1.379-.445-2.103-.107l.845 1.813Zm.484-1.33l-.317-.68l-1.812.846l.317.68l1.812-.845Zm13.076 2.443c-.151.324-.37.535-.561.637c-.19.102-.289.07-.315.058l-.845 1.813c.724.338 1.495.218 2.103-.107c.607-.325 1.114-.878 1.43-1.555l-1.812-.846Zm-.876.695c-.026-.012-.113-.067-.158-.278c-.044-.212-.023-.516.127-.84l-1.812-.844c-.316.677-.414 1.421-.272 2.095c.142.675.545 1.342 1.27 1.68l.845-1.813Zm-.03-1.117c.15-.324.37-.535.56-.637c.19-.102.289-.07.315-.058l.845-1.813c-.724-.338-1.495-.218-2.103.107c-.607.325-1.114.878-1.43 1.556l1.812.845Zm.875-.695c.026.012.114.067.158.278c.044.212.023.516-.127.84l1.812.845c.316-.678.414-1.422.272-2.096c-.142-.675-.545-1.342-1.27-1.68l-.845 1.813Zm1.33-.484l.316-.68l-1.813-.845l-.317.68l1.813.845ZM13 7.5c0 1.048-.644 1.5-1 1.5v2c1.854 0 3-1.787 3-3.5h-2ZM12 9c-.356 0-1-.452-1-1.5H9c0 1.713 1.146 3.5 3 3.5V9Zm-1-1.5c0-1.048.644-1.5 1-1.5V4c-1.854 0-3 1.787-3 3.5h2ZM12 6c.356 0 1 .452 1 1.5h2C15 5.787 13.854 4 12 4v2Zm1-1V4h-2v1h2Z" /></g></svg>
+                    <p class="sidebar-text">Adoption Form</p>
+                </li>
+                <li class="option" ng-click="redirectTableVolunteers()">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="sidebar-icon" viewBox="0 0 24 24" fill="#ffffff"><g fill="none" fill-rule="evenodd"><path d="M24 0v24H0V0h24ZM12.594 23.258l-.012.002l-.071.035l-.02.004l-.014-.004l-.071-.036c-.01-.003-.019 0-.024.006l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427c-.002-.01-.009-.017-.016-.018Zm.264-.113l-.014.002l-.184.093l-.01.01l-.003.011l.018.43l.005.012l.008.008l.201.092c.012.004.023 0 .029-.008l.004-.014l-.034-.614c-.003-.012-.01-.02-.02-.022Zm-.715.002a.023.023 0 0 0-.027.006l-.006.014l-.034.614c0 .012.007.02.017.024l.015-.002l.201-.093l.01-.008l.003-.011l.018-.43l-.003-.012l-.01-.01l-.184-.092Z" /><path fill="#ffffff" d="m11.253 11.79l.226.05l3.716.928c1.171.293 1.76 1.528 1.39 2.64l.32-.22l.646-.462c.325-.23.657-.448 1.002-.62c1.536-.768 3.334.291 3.442 1.971l.005.16v.055c0 .697-.3 1.357-.82 1.814l-.147.12l-3.07 2.302c-.299.224-.636.39-.994.49l-.218.052l-3.21.642a5 5 0 0 1-2.964-.314l-.252-.117l-2.35-1.175a1 1 0 0 0-.331-.1L7.528 20h-.796a2 2 0 0 1-1.563.993L5 21H4a2 2 0 0 1-1.995-1.85L2 19v-4a2 2 0 0 1 1.85-1.994L4 13h1c.484 0 .928.172 1.274.459l.125.112l1.99-1.243a4 4 0 0 1 2.636-.575l.228.036Zm-1.804 2.234L7 15.554V18h.528a3 3 0 0 1 1.342.317l2.35 1.175a3 3 0 0 0 1.93.258l3.209-.642a.998.998 0 0 0 .404-.18l3.07-2.303c.128-.096.167-.237.167-.389a.382.382 0 0 0-.513-.359l-2.428 1.62a3 3 0 0 1-1.665.503H12v-2h1.559a1 1 0 0 0 .948-.684l.203-.608l-3.716-.928a2 2 0 0 0-1.545.244ZM5 15H4v4h1v-4ZM16 3.47c1.03-.644 2.212-.593 3.166-.037c1.112.648 1.866 1.942 1.833 3.422c-.041 1.835-1.41 3.344-3.438 4.6l-.398.239c-.358.212-.74.418-1.163.418c-.423 0-.805-.206-1.163-.418l-.398-.24C12.41 10.198 11.042 8.69 11 6.854c-.033-1.48.721-2.774 1.833-3.422c.954-.556 2.135-.607 3.166.037Zm2.159 1.691c-.379-.22-.83-.246-1.278.136l-.206.19a1.084 1.084 0 0 1-1.35 0l-.206-.19c-.449-.382-.9-.357-1.278-.136c-.461.269-.858.87-.84 1.65c.017.778.618 1.78 2.468 2.929l.238.144l.293.171l.293-.17C18.33 8.673 18.981 7.62 19 6.808c.018-.779-.379-1.38-.84-1.649Z" /></g></svg>
+                    <p class="sidebar-text">Volunteer Form</p>
+                </li>
+                <li class="option" ng-click="redirectTableUsers()" ng-if="signedInRole == 1">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="sidebar-icon" viewBox="0 0 24 24" fill="#ffffff"><g fill="none" fill-rule="evenodd"><path d="M24 0v24H0V0h24ZM12.593 23.258l-.011.002l-.071.035l-.02.004l-.014-.004l-.071-.035c-.01-.004-.019-.001-.024.005l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427c-.002-.01-.009-.017-.017-.018Zm.265-.113l-.013.002l-.185.093l-.01.01l-.003.011l.018.43l.005.012l.008.007l.201.093c.012.004.023 0 .029-.008l.004-.014l-.034-.614c-.003-.012-.01-.02-.02-.022Zm-.715.002a.023.023 0 0 0-.027.006l-.006.014l-.034.614c0 .012.007.02.017.024l.015-.002l.201-.093l.01-.008l.004-.011l.017-.43l-.003-.012l-.01-.01l-.184-.092Z" /><path fill="#ffffff" d="M12 13c2.396 0 4.575.694 6.178 1.671c.8.49 1.484 1.065 1.978 1.69c.486.616.844 1.352.844 2.139c0 .845-.411 1.511-1.003 1.986c-.56.45-1.299.748-2.084.956c-1.578.417-3.684.558-5.913.558s-4.335-.14-5.913-.558c-.785-.208-1.524-.506-2.084-.956C3.41 20.01 3 19.345 3 18.5c0-.787.358-1.523.844-2.139c.494-.625 1.177-1.2 1.978-1.69C7.425 13.694 9.605 13 12 13Zm0 2c-2.023 0-3.843.59-5.136 1.379c-.647.394-1.135.822-1.45 1.222c-.324.41-.414.72-.414.899c0 .122.037.251.255.426c.249.2.682.407 1.344.582C7.917 19.858 9.811 20 12 20c2.19 0 4.083-.143 5.4-.492c.663-.175 1.096-.382 1.345-.582c.218-.175.255-.304.255-.426c0-.18-.09-.489-.413-.899c-.316-.4-.804-.828-1.451-1.222C15.843 15.589 14.023 15 12 15Zm0-13a5 5 0 1 1 0 10a5 5 0 0 1 0-10Zm0 2a3 3 0 1 0 0 6a3 3 0 0 0 0-6Z" /></g></svg>
+                    <p class="sidebar-text">Users</p>
+                </li>
+                <li class="option" ng-click="redirectTableLogs()" ng-if="signedInRole == 1">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="sidebar-icon" viewBox="0 0 24 24" fill="#ffffff"><g fill="none" fill-rule="evenodd"><path d="M24 0v24H0V0h24ZM12.594 23.258l-.012.002l-.071.035l-.02.004l-.014-.004l-.071-.036c-.01-.003-.019 0-.024.006l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427c-.002-.01-.009-.017-.016-.018Zm.264-.113l-.014.002l-.184.093l-.01.01l-.003.011l.018.43l.005.012l.008.008l.201.092c.012.004.023 0 .029-.008l.004-.014l-.034-.614c-.003-.012-.01-.02-.02-.022Zm-.715.002a.023.023 0 0 0-.027.006l-.006.014l-.034.614c0 .012.007.02.017.024l.015-.002l.201-.093l.01-.008l.003-.011l.018-.43l-.003-.012l-.01-.01l-.184-.092Z" /><path fill="#ffffff" d="M19 4a2 2 0 0 1 1.995 1.85L21 6v13a2 2 0 0 1-1.85 1.995L19 21H5a2 2 0 0 1-1.995-1.85L3 19V6a2 2 0 0 1 1.85-1.995L5 4h14ZM8 16H5v3h3v-3Zm11 0h-9v3h9v-3ZM8 11H5v3h3v-3Zm11 0h-9v3h9v-3ZM8 6H5v3h3V6Zm11 0h-9v3h9V6Z" /></g></svg>
+                    <p class="sidebar-text">Logs</p>
+                </li>
+                <li class="option" data-bs-toggle="modal" data-bs-target="#updateProfile" ng-click="getProfileForEdit()">
+                    <img src="@ViewBag.pfp" alt="User profile" class="rounded-circle sidebar-pfp" />
+                    <p class="sidebar-text">@ViewBag.FirstName @ViewBag.LastName</p>
+                </li>
+            </ul>
+        </div>
+        <div class="col container1" ng-init="initCharts()">
+            <h1 class="header-text">Dashboard</h1>
+            <h2>Welcome, @ViewBag.FirstName!</h2>
+
+            <div class="row d-flex gap-3 mt-3">
+                <div class="col rounded-3 d-flex flex-column p-4" style="background-color: white; box-shadow: rgba(0,0,0,0.3) 0.2vw 0.2vw 0.2vw">
+                    <p class="mb-0" style="text-align: center">Total Successful Adoptions:</p>
+                    <h2 style="color: #B9375D; text-align: center">{{totalAdoptions}}</h2>
+                </div>
+                <div class="col rounded-3 d-flex flex-column p-4" style="background-color: white; box-shadow: rgba(0,0,0,0.3) 0.2vw 0.2vw 0.2vw">
+                    <p class="mb-0" style="text-align: center">Overall Volunteers:</p>
+                    <h2 style="color: #B9375D; text-align: center">{{totalVolunteers}}</h2>
+                </div>
+                <div class="col rounded-3 d-flex flex-column p-4" style="background-color: white; box-shadow: rgba(0,0,0,0.3) 0.2vw 0.2vw 0.2vw">
+                    <p class="mb-0" style="text-align: center">Pets for Adoption:</p>
+                    <h2 style="color: #B9375D; text-align: center">{{petsForAdoption}}</h2>
+                </div>
+                <div class="col rounded-3 d-flex flex-column p-4" style="background-color: white; box-shadow: rgba(0,0,0,0.3) 0.2vw 0.2vw 0.2vw">
+                    <p class="mb-0" style="text-align: center">Total Employees:</p>
+                    <h2 style="color: #B9375D; text-align: center">{{totalEmployees}}</h2>
+                </div>
+            </div>
+            <div class="row mt-5 d-flex justify-content-center">
+                <div style="height: 70vh; width: 70vw;">
+                    <h2 class="mb-4" style="color: #B9375D; text-align: center;">Available Pets to Adopt</h2>
+                    <canvas id="pie" class="chart chart-pie"
+                            chart-data="data" chart-labels="labels" chart-colors="petsColors">
+                    </canvas>
+                </div>
+            </div>
+            <div class="row mt-5 d-flex justify-content-center" style="padding-top: 10vh;">
+                <div style="height: 50vh; width: 80vw;">
+                    <h2 class="mb-4" style="color: #B9375D; text-align: center;">Number of Volunteers per Month</h2>
+                    <canvas id="line" class="chart chart-line"
+                            chart-data="volunteerChartData"
+                            chart-labels="volunteerChartLabels"
+                            chart-series="volunteerChartSeries"
+                            chart-colors="volunteerColors">
+                    </canvas>
+                </div>
+            </div>
+            <div class="row mt-5 d-flex justify-content-center" style="padding-top: 50vh;">
+                <div style="height: 50vh; width: 80vw;">
+                    <h2 class="mb-4" style="color: #B9375D; text-align: center;">Number of Adoptions per Province</h2>
+                    <canvas id="adoptionsBar" class="chart chart-bar"
+                            chart-data="adoptionData"
+                            chart-labels="adoptionLabels"
+                            chart-series="adoptionSeries"
+                            chart-colors="adoptionColors">
+                    </canvas>
+                </div>
+            </div>
+
+
+            @*UPDATE PROFILE MODAL*@
+            <div class="modal fade" id="updateProfile" tabindex="-1" aria-labelledby="updateProfile" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-scrollable modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="updateProfile">Update your Profile</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body px-5">
+                            <form action="" method="post" class="needs-validation" name="profileForm" novalidate>
+                                <div class="row mb-3">
+                                    <div class="col-5">
+                                        <label class="form-check-label" for="imagepath5">Profile Picture</label>
+                                        <input class="form-control" type="file" name="imagepath5" id="imagepath5" accept="image/*" onchange="angular.element(this).scope().previewProfileImage(event)" />
+                                        <div class="d-block fst-italic text-secondary mb-2" style="font-size: 0.8vw;">Do not upload if previous image will be used again.</div>
+                                        <button type="button" class="d-block btn btn-secondary" ng-click="clearImageProfile()">Cancel Upload</button>
+                                    </div>
+                                    <div class="col d-flex justify-content-center">
+                                        <img class="rounded-circle" ng-src="{{ profileEdit.profilePreview }}" alt="Profile picture" style="width: 12vw; height: auto;" />
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <div class="col-6">
+                                        <label for="fname" class="form-label ">First name <span style="color: red;">*</span></label>
+                                        <input name="fname" type="text" class="form-control no-valid-feedback" id="fname" ng-pattern="/^[A-ZÑ][a-zñ]+(?:\s[A-ZÑ][a-zñ]+)*$/" ng-model="profileEdit.firstName" ng-class="{'is-invalid': profileForm.fname.$touched && profileForm.fname.$invalid}" ng-required="true" maxlength="50" ng-keypress="lettersOnly($event)">
+                                        <div class="invalid-feedback">
+                                            Capitalize the first letter. Up to 50 characters only.
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+                                        <label for="lname" class="form-label">Last name <span style="color: red;">*</span></label>
+                                        <input name="lname" type="text" class="form-control no-valid-feedback" id="lname" ng-pattern="/^[A-ZÑ][a-zñ]+(?:\s[A-ZÑ][a-zñ]+)*$/" ng-model="profileEdit.lastName" ng-class="{'is-invalid': profileForm.lname.$touched && profileForm.lname.$invalid}" ng-required="true" maxlength="50" ng-keypress="lettersOnly($event)">
+                                        <div class="invalid-feedback">
+                                            Capitalize the first letter. Up to 50 characters only.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <div class="col">
+                                        <label for="email" class="form-label">Email <span style="color: red;">*</span></label>
+                                        <input name="email" type="email" class="form-control no-valid-feedback" id="email" placeholder="name@site.com" ng-model="profileEdit.email" ng-class="{'is-invalid': profileForm.email.$touched && profileForm.email.$invalid}" ng-required="true" maxlength="254">
+                                        <div class="invalid-feedback">
+                                            Please enter a valid email address.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <div class="col">
+                                        <label for="userrole" class="form-label">User Role <span style="color: red;">*</span></label>
+                                        <select ng-disabled="true" name="userrole" id="userrole" class="form-select no-valid-feedback" ng-model="profileEdit.role" ng-required="true">
+                                            <option selected disabled value="">Select a role</option>
+                                            <option value="1" ng-value="1">Admin</option>
+                                            <option value="0" ng-value="0">Employee</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="row mb-3">
+                                    <div class="col px-1">
+                                        <label class="form-label d-block mb-2">Will you change your password? <span style="color: red;">*</span></label>
+                                        <div class="form-check-inline">
+                                            <input class="form-check-input" type="radio" name="passwordprompt" id="yes" value="1" ng-value="1" ng-model="passwordprompt" ng-required="true">
+                                            <label class="form-check-label" for="yes">
+                                                Yes
+                                            </label>
+                                        </div>
+                                        <div class="form-check-inline">
+                                            <input class="form-check-input" type="radio" name="passwordprompt" id="no" value="0" ng-value="0" ng-model="passwordprompt">
+                                            <label class="form-check-label" for="no">
+                                                No
+                                            </label>
+                                        </div>
+                                        <div class="invalid-feedback" ng-show="profileForm.passwordprompt.$touched && profileForm.passwordprompt.$invalid">
+                                            Please select an answer.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row mb-3" ng-show="passwordprompt == 1">
+                                    <div class="col">
+                                        <label for="password1" class="form-label">New Password <span style="color: red;">*</span></label>
+                                        <input name="password1" id="password1" type="password"
+                                               ng-model="pass1"
+                                               class="form-control"
+                                               ng-class="{'is-invalid': profileForm.password1.$touched && (pass1.length < 8 || !hasUppercase(pass1) || !hasSpecialChar(pass1))}"
+                                               {{passwordprompt == 1 ? 'ng-required="true"' : ''}} maxlength="128" />
+                                        <div class="invalid-feedback" ng-show="(profileForm.password1.$touched || profileForm.password1.$dirty) && (!pass1 || pass1.length < 8)">
+                                            Password must be at least 8 characters long.
+                                        </div>
+                                        <div class="invalid-feedback" ng-show="(profileForm.password1.$touched || profileForm.password1.$dirty) && !hasUppercase(pass1)">
+                                            Password must contain at least one uppercase letter.
+                                        </div>
+                                        <div class="invalid-feedback" ng-show="(profileForm.password1.$touched || profileForm.password1.$dirty) && !hasSpecialChar(pass1)">
+                                            Password must contain at least one special character.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row mb-3" ng-show="passwordprompt == 1">
+                                    <div class="col">
+                                        <label for="password2" class="form-label">Confirm New Password <span style="color: red;">*</span></label>
+                                        <input name="password2" id="password2" type="password"
+                                               ng-model="pass2"
+                                               class="form-control"
+                                               {{passwordprompt == 1 ? 'ng-required="true"' : ''}}
+                                               ng-class="{'is-invalid': profileForm.password2.$touched && pass2 !== pass1}"
+                                               maxlength="128" />
+                                        <div class="invalid-feedback">
+                                            Does not match the password above.
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row mb-3" ng-show="passwordprompt == 1">
+                                    <div class="col">
+                                        <label for="oldpassword" class="form-label">Type current password to change password <span style="color: red;">*</span></label>
+                                        <input name="oldpassword" id="oldpassword" type="password"
+                                               ng-model="oldpass"
+                                               class="form-control"
+                                               {{passwordprompt == 1 ? 'ng-required="true"' : ''}}
+                                               ng-class="{'is-invalid': profileForm.oldpassword.$touched && profileForm.oldpassword.$invalid}"
+                                               maxlength="128" />
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger me-auto d-flex align-items-center" ng-click="logoutSession()"><svg style="width: 1vw; height: 1vw; margin-right: 0.5vw;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10 3H6a2 2 0 0 0-2 2v14c0 1.1.9 2 2 2h4M16 17l5-5-5-5M19.8 12H9" /></svg> Sign Out</button>
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                            <button type="button" class="btn btn-success" ng-click="submitProfileForm()">Save</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../Scripts/jquery-3.7.0.min.js"></script>
+    <script src="../Scripts/angular.min.js"></script>
+
+    <script src="~/Scripts/Chart.min.js"></script>
+    <script src="~/Scripts/angular-chart.min.js"></script>
+
+    <script src="../Scripts/Main/Module.js"></script>
+    <script src="../Scripts/Main/Service.js"></script>
+    <script src="../Scripts/Main/Controller.js"></script>
+
+    <script src="../Scripts/AgeValidator.js"></script>
+    <script src="../Scripts/PetProfileController.js"></script>
+    <script src="../Scripts/dataTables.min.js"></script>
+    <script src="../Scripts/bootstrap.bundle.min.js"></script>
+    <script src="../Scripts/sweetalert2.all.min.js"></script>
+    <script src="../Scripts/pdfmake/pdfmake.min.js"></script>
+    <script src="../Scripts/pdfmake/vfs_fonts.js"></script>
+</body>
+</html>
